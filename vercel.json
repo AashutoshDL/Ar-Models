@@ -1,12 +1,21 @@
 {
-    "builds": [
-      {
-        "src": "package.json",
-        "use": "@vercel/node",
-        "config": {
-          "buildCommand": "git lfs pull && npm run build"
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, POST, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Content-Type"
         }
-      }
-    ]
-  }
-  
+      ]
+    }
+  ]
+}
